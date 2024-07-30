@@ -40,10 +40,11 @@ morgan.token('body', (req) => JSON.stringify(req.body))
 
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :body'))
 
-app.get('/api/persons',(request,response) => {
+app.get('/api/persons',(request,response, next) => {
     Person.find({}).then(persons => {
     response.json(persons)
     })
+    .catch(error => next(error))
 })
 
 app.get('/info',(request,response,next) => {
