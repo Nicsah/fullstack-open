@@ -1,0 +1,9 @@
+POST http://localhost:3003/api/blogs
+Content-Type: application/json
+
+{
+    "title": "paras blogi ikinä",
+    "author": "minä itse",
+    "url": "https://jugicraft.fi",
+    "likes": 1000000
+}
